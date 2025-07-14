@@ -16,7 +16,13 @@ Users can:
 matchmaker-app/
 │
 ├── backend/
-│   └── server.js
+│   └── index.js
+|   └──config
+|        └──connection.js
+|   └──controllers
+|      └──controllers.js
+|   └──module
+|      └──user.js
 ├── vibesync/
 │   └── (React app created via CRA)
 │       └── src/
