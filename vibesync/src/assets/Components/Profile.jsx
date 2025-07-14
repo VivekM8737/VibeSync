@@ -23,7 +23,7 @@ const Profile = () => {
     };
     return (
         <>
-            <h1 className="text-4xl font-bold mb-8">💖 Matchmaker</h1>
+            <h1 className="text-4xl font-bold mb-8">💖 VibeSync</h1>
 
             <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-md mb-10">
                 <h2 className="text-xl font-semibold mb-4">Create Your Profile</h2>
