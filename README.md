@@ -17,7 +17,7 @@ matchmaker-app/
 │
 ├── backend/
 │   └── server.js
-├── frontend/
+├── vibesync/
 │   └── (React app created via CRA)
 │       └── src/
 │           └── App.js
@@ -65,7 +65,7 @@ matchmaker-app/
 
 1. Go to the frontend directory:
    ```bash
-   cd ../frontend
+   cd ../vibesync
    ```
 
 2. Install dependencies:
@@ -123,31 +123,8 @@ GET http://localhost:5000/matches/Alice
     "name": "Bob",
     "age": 26,
     "interests": ["reading", "music", "gaming"],
-    "shortlist": []
   }
 ]
-```
-
----
-
-### 🔸 PUT `/shortlist/:username`
-Shortlist another user to show interest.
-
-#### ✅ Sample Request:
-```json
-PUT http://localhost:5000/shortlist/Alice
-Content-Type: application/json
-
-{
-  "shortlistedUser": "Bob"
-}
-```
-
-#### ✅ Sample Response:
-```json
-{
-  "message": "User shortlisted"
-}
 ```
 
 ---
