@@ -22,8 +22,8 @@ matchmaker-app/
 │       └── src/
 |           └── assets
                   └──Components
-                     └──Profile
-                     └──Matches
+                     └──Profile.js
+                     └──Matches.js
 │           └── App.js
 ├── README.md
 ```
