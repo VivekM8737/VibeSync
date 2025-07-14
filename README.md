@@ -20,6 +20,10 @@ matchmaker-app/
 ├── vibesync/
 │   └── (React app created via CRA)
 │       └── src/
+|           └── assets
+                  └──Components
+                     └──Profile
+                     └──Matches
 │           └── App.js
 ├── README.md
 ```
