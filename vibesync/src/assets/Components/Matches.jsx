@@ -25,8 +25,16 @@ const Matches = () => {
     };
     const handleShortlist = async (matchName) => {
         await axios.put(`${API}/shortlist/${username}`, { shortlistedUser: matchName });
-        alert(`You connected with ${matchName}`);
+        handleConnections();
+        // alert(`You connected with ${matchName}`);
     };
+
+    const handleUnShortlist = async (matchName) => {
+        await axios.put(`${API}/unshortlist/${username}`, { shortlistedUser: matchName });
+        handleConnections();
+        // alert(`You connected with ${matchName} is removed`);
+    };
+
     const handleConnections = async (matchName) => {
         if (!username) return alert("Enter username to fetch matches");
         try {
@@ -81,6 +89,12 @@ const Matches = () => {
                         {connection.map((m, i) => (
                             <li key={i} className="bg-white p-4 shadow-md rounded-xl">
                                 <h3 className="text-lg font-bold">{m} </h3>
+                                <button
+                                    onClick={() => handleUnShortlist(m)}
+                                    className="mt-2 bg-purple-500 text-white px-4 py-1 rounded hover:bg-purple-600"
+                                >
+                                    remove
+                                </button>
                               
                             </li>
 

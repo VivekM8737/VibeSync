@@ -54,5 +54,25 @@ const handleSortList= async (req, res) => {
 
     res.json({ message: 'User shortlisted' });
 }
+const handleUnSortList= async (req, res) => {
+    const { username } = req.params;
+    const { shortlistedUser } = req.body;
+    console.log(shortlistedUser);
+    try{
 
-export {handleRegister,handleGetUser,handleSortList,handleConnections}
+        const user = await User.findOne({ name: username });
+        if (!user) return res.status(404).json({ error: 'User not found' });
+    
+        if (user.shortlist.includes(shortlistedUser)) {
+            user.shortlist.remove(shortlistedUser);
+            await user.save();
+        }
+        res.json({ message: 'User removed' });
+    }
+    catch(error){
+        return res.status(404).json({message: 'user is not removed!!'})
+    }
+
+}
+
+export {handleRegister,handleGetUser,handleSortList,handleConnections,handleUnSortList}
